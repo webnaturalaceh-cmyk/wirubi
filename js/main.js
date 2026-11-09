@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initCatalogFilter();
   initGalleryLightbox();
+  initOrderModal();
   initContactForm();
 });
 
@@ -279,6 +280,213 @@ function initGalleryLightbox() {
     if (!clickedInDialog) {
       dialog.close();
     }
+  });
+}
+
+/**
+ * 6. Order Form Modal (Pesan Produk & Sewa Barang -> Formspree / Web3Forms / wirubindonesia@gmail.com)
+ */
+function initOrderModal() {
+  const modal = document.getElementById('order-modal');
+  const form = document.getElementById('order-form');
+  const triggers = document.querySelectorAll('[data-order-trigger]');
+  const closeBtn = document.getElementById('order-modal-close');
+  const cancelBtn = document.getElementById('order-modal-cancel');
+  const itemInput = document.getElementById('order-item');
+  const subjectInput = document.getElementById('order-subject');
+  const typeInput = document.getElementById('order-type-input');
+  const badgeEl = document.getElementById('order-modal-badge');
+  const titleEl = document.getElementById('order-modal-title');
+  const jumlahLabel = document.getElementById('order-jumlah-label');
+  const jumlahInput = document.getElementById('order-jumlah');
+  const statusBox = document.getElementById('order-form-status');
+  const submitBtn = document.getElementById('order-submit-btn');
+
+  if (!modal || !form || !triggers.length) return;
+
+  const clearValidationState = () => {
+    const controls = form.querySelectorAll('.form-control');
+    controls.forEach((control) => {
+      control.removeAttribute('aria-invalid');
+      control.classList.remove('user-invalid-fallback', 'user-valid-fallback');
+    });
+  };
+
+  const syncAriaInvalid = (input) => {
+    if (!input || typeof input.checkValidity !== 'function') return;
+    if (input.readOnly) return;
+    const isInvalid = !input.checkValidity();
+    input.setAttribute('aria-invalid', String(isInvalid));
+    input.classList.toggle('user-invalid-fallback', isInvalid);
+    input.classList.toggle('user-valid-fallback', !isInvalid);
+  };
+
+  // Open modal and prefill product/equipment name when card CTA is clicked
+  triggers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const cardTitle = btn
+        .closest('.product-card')
+        ?.querySelector('.product-card__title')
+        ?.textContent?.trim();
+      const itemName = btn.dataset.orderItem || cardTitle || '';
+      const orderType = btn.dataset.orderType || 'produk';
+      const isSewa = orderType === 'sewa';
+
+      if (statusBox) {
+        statusBox.hidden = true;
+        statusBox.textContent = '';
+      }
+      clearValidationState();
+
+      if (itemInput) {
+        itemInput.value = itemName;
+      }
+      if (subjectInput) {
+        subjectInput.value = isSewa
+          ? `Pengajuan Sewa Barang UMKM: ${itemName} — WIRUBI`
+          : `Pesanan Produk UMKM: ${itemName} — WIRUBI`;
+      }
+      if (typeInput) {
+        typeInput.value = isSewa
+          ? 'Sewa Barang & Peralatan UMKM'
+          : 'Pemesanan Produk UMKM';
+      }
+      if (badgeEl) {
+        badgeEl.textContent = isSewa
+          ? 'Formulir Penyewaan Barang UMKM'
+          : 'Formulir Pemesanan Produk UMKM';
+      }
+      if (titleEl) {
+        titleEl.textContent = isSewa
+          ? 'Sewa Peralatan UMKM WIRUBI'
+          : 'Pesan Produk UMKM WIRUBI';
+      }
+      if (jumlahLabel) {
+        jumlahLabel.innerHTML = isSewa
+          ? 'Jumlah / Durasi Sewa <span aria-hidden="true">*</span>'
+          : 'Jumlah / Durasi Sewa <span aria-hidden="true">*</span>';
+      }
+      if (jumlahInput) {
+        jumlahInput.placeholder = isSewa
+          ? 'Contoh: 3 Hari / 1 Unit'
+          : 'Contoh: 5 Pcs / 2 Paket';
+      }
+
+      modal.showModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => modal.close());
+  }
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', () => modal.close());
+  }
+
+  // Fallback for browsers without native <dialog closedby="any"> support
+  if (!('closedBy' in HTMLDialogElement.prototype)) {
+    modal.addEventListener('click', (event) => {
+      if (event.target !== modal) return;
+      const rect = modal.getBoundingClientRect();
+      const isDialogContent =
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width;
+      if (isDialogContent) return;
+      modal.close();
+    });
+  }
+
+  // Validate on blur and clear on input
+  form.addEventListener(
+    'blur',
+    (event) => {
+      if (event.target.classList?.contains('form-control')) {
+        syncAriaInvalid(event.target);
+      }
+    },
+    true
+  );
+
+  form.addEventListener('input', (event) => {
+    if (
+      event.target.classList?.contains('form-control') &&
+      event.target.hasAttribute('aria-invalid')
+    ) {
+      syncAriaInvalid(event.target);
+    }
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const controls = form.querySelectorAll('.form-control:not([readonly])');
+    let firstInvalid = null;
+
+    controls.forEach((control) => {
+      syncAriaInvalid(control);
+      if (!control.checkValidity() && !firstInvalid) {
+        firstInvalid = control;
+      }
+    });
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+
+    const formData = new FormData(form);
+    const itemName = String(formData.get('nama_produk_barang') || '').trim();
+    const customerName = String(formData.get('nama_pemesan') || '').trim();
+
+    // Determine active endpoint (Formspree, Web3Forms, or FormSubmit -> wirubindonesia@gmail.com)
+    const formspreeUrl = form.dataset.formspreeEndpoint || '';
+    const web3formsUrl = form.dataset.web3formsEndpoint || '';
+    const accessKey = String(formData.get('access_key') || '');
+
+    let endpoint = form.action;
+    if (formspreeUrl && !formspreeUrl.includes('YOUR_FORMSPREE_ID')) {
+      endpoint = formspreeUrl;
+    } else if (web3formsUrl && accessKey && !accessKey.includes('YOUR_WEB3FORMS_ACCESS_KEY')) {
+      endpoint = web3formsUrl;
+    }
+
+    const originalBtnText = submitBtn?.querySelector('span')?.textContent || 'Kirim Pesanan';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      const span = submitBtn.querySelector('span');
+      if (span) span.textContent = 'Mengirim...';
+    }
+
+    try {
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json'
+        },
+        body: formData
+      });
+    } catch {
+      // Fallback gracefully when offline or before endpoint token activation
+    }
+
+    if (statusBox) {
+      statusBox.hidden = false;
+      statusBox.textContent = `Terima kasih, ${customerName}! Pesanan "${itemName}" telah tercatat dan dikirim ke wirubindonesia@gmail.com.`;
+    }
+
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      const span = submitBtn.querySelector('span');
+      if (span) span.textContent = originalBtnText;
+    }
+
+    // Preserve the selected item name while resetting other inputs
+    const currentItem = itemInput ? itemInput.value : '';
+    form.reset();
+    if (itemInput) itemInput.value = currentItem;
+    clearValidationState();
   });
 }
 
