@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Sewa Barang & Peralatan UMKM — WIRUBI (Wirausaha Unggul Bersama Indonesia)</title>
+  <meta name="description" content="Layanan penyewaan mesin pengemasan, peralatan produksi WUBI Kitchen, serta fasilitas pendingin & display pameran untuk mendukung operasional UMKM binaan WIRUBI.">
+  <meta name="theme-color" content="#05195B">
+
+  <!-- Preconnect & Google Fonts (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Deferred Interactive Script -->
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#sewa-barang" class="skip-link">Lewati ke katalog sewa barang</a>
+
+  <!-- ====================================================================
+       STICKY HEADER & NAVIGATION
+       ==================================================================== -->
+  <div class="site-header-wrapper">
+    <header class="site-header">
+      <div class="container navbar">
+        <!-- Brand Logo Area (Left) -->
+        <a href="index.html" class="brand" aria-label="WIRUBI - Wirausaha Unggul Bersama Indonesia, Kembali ke Beranda">
+          <div class="brand__box">
+            <img
+              src="logo_wirubu.jpg.jpeg"
+              alt="Logo Resmi WIRUBI"
+              class="brand__logo-img"
+              width="44"
+              height="44"
+            >
+          </div>
+          <div class="brand__text">
+            <span class="brand__name">WIRUBI</span>
+            <span class="brand__sub">Wirausaha Unggul Bersama Indonesia</span>
+          </div>
+        </a>
+
+        <!-- Hamburger Toggle Button (Mobile & Tablet) -->
+        <button
+          type="button"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Buka menu navigasi"
+        >
+          <svg class="nav-toggle__icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg class="nav-toggle__icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M6 18L18 6"/>
+          </svg>
+        </button>
+
+        <!-- Navigation Menu (Right) -->
+        <div id="nav-panel" class="nav-panel">
+          <nav aria-label="Navigasi Utama">
+            <ul class="nav-menu" role="list">
+              <li><a href="index.html#beranda" class="nav-link">Beranda</a></li>
+              <li><a href="index.html#tentang" class="nav-link">Tentang Kami</a></li>
+              <li><a href="index.html#program" class="nav-link">Program</a></li>
+              <li class="nav-dropdown">
+                <button
+                  type="button"
+                  class="nav-link nav-dropdown__toggle"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-current="true"
+                  data-active-page="true"
+                >
+                  <span>Katalog</span>
+                  <svg class="nav-dropdown__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <ul class="nav-dropdown__menu" role="list" aria-label="Sub-menu Katalog">
+                  <li>
+                    <a href="katalog-produk.html" class="nav-dropdown__item">Produk UMKM</a>
+                  </li>
+                  <li>
+                    <a href="sewa-barang.html" class="nav-dropdown__item" aria-current="page">Sewa Barang</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="index.html#galeri" class="nav-link">Galeri</a></li>
+              <li><a href="index.html#partner" class="nav-link">Partner</a></li>
+              <li><a href="#kontak" class="nav-link">Kontak</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main id="main-content">
+    <!-- ==================================================================
+         PAGE HEADER BANNER
+         ================================================================== -->
+    <section class="page-banner" aria-labelledby="page-heading">
+      <div class="container page-banner__inner">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <a href="index.html">Beranda</a>
+          <span aria-hidden="true">/</span>
+          <span>Katalog</span>
+          <span aria-hidden="true">/</span>
+          <span class="breadcrumb__current" aria-current="page">Sewa Barang</span>
+        </nav>
+
+        <h1 id="page-heading" class="page-banner__title">Layanan &amp; Katalog Sewa Barang UMKM</h1>
+        <p class="page-banner__desc">
+          Fasilitas pemakaian dan penyewaan mesin pengemasan modern, peralatan produksi <em>WUBI Kitchen</em>, serta perlengkapan bazar untuk meningkatkan efisiensi dan kualitas produk UMKM.
+        </p>
+
+        <div class="page-banner__switch">
+          <a href="katalog-produk.html" class="btn btn--outline-white">
+            <span>Lihat Katalog Produk UMKM Binaan</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         DAFTAR PERALATAN SEWA BARANG UMKM (#sewa-barang)
+         ================================================================== -->
+    <section id="sewa-barang" class="section section--canvas" aria-labelledby="sewa-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Fasilitas Rumah Kemasan &amp; WUBI Kitchen</span>
+          <h2 id="sewa-heading" class="section-title">Peralatan Produksi &amp; Mesin Kemasan Siap Pakai</h2>
+          <p>
+            Pilih kategori peralatan yang Anda butuhkan dan lakukan reservasi jadwal pemakaian atau penyewaan langsung melalui WhatsApp resmi WIRUBI.
+          </p>
+        </div>
+
+        <!-- Filter Kategori (Semua, Mesin Kemasan, Alat Produksi, Pendingin & Display) -->
+        <search aria-label="Filter kategori peralatan sewa">
+          <div class="catalog-filter" role="group" aria-label="Pilih kategori peralatan">
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Semua</button>
+            <button type="button" class="filter-btn" data-filter="kemasan" aria-pressed="false">Mesin Kemasan</button>
+            <button type="button" class="filter-btn" data-filter="produksi" aria-pressed="false">Alat Produksi</button>
+            <button type="button" class="filter-btn" data-filter="pendingin" aria-pressed="false">Pendingin &amp; Display</button>
+          </div>
+        </search>
+
+        <p id="catalog-status" class="catalog-status" data-catalog-type="sewa" aria-live="polite">
+          Menampilkan seluruh 12 peralatan &amp; layanan sewa barang UMKM WIRUBI.
+        </p>
+
+        <!-- Grid Peralatan Sewa (Rasio Gambar 1:1) -->
+        <div class="catalog-grid">
+          <!-- Alat 1: Mesin Kemasan -->
+          <article class="product-card" data-category="kemasan">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-vacuum-sealer.jpg"
+                alt="Mesin Vacuum Sealer HEAVYPack untuk pengemasan hampa udara"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Mesin Kemasan</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Mesin Vacuum Sealer (HEAVYPack)</h3>
+                <p class="product-card__desc">
+                  Mesin penyegel kemasan hampa udara untuk memperpanjang daya tahan produk kuliner, bumbu, dan <em>frozen food</em> UMKM.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Mesin%20Vacuum%20Sealer%20(HEAVYPack)*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 2: Mesin Kemasan -->
+          <article class="product-card" data-category="kemasan">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-continuous-sealer.jpg"
+                alt="Mesin Continuous Band Sealer penyegel kemasan pouch otomatis"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Mesin Kemasan</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Mesin Continuous Band Sealer</h3>
+                <p class="product-card__desc">
+                  Mesin segel kemasan <em>standing pouch</em> dan aluminium foil otomatis berkecepatan tinggi dengan hasil pres rapat dan rapi.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Mesin%20Continuous%20Band%20Sealer*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 3: Mesin Kemasan -->
+          <article class="product-card" data-category="kemasan">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-cup-sealer.jpg"
+                alt="Mesin Cup Sealer penutup kemasan gelas minuman"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Mesin Kemasan</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Mesin Cup Sealer Kemasan Minuman</h3>
+                <p class="product-card__desc">
+                  Alat pres penutup gelas plastik presisi dan anti-bocor, ideal untuk produksi minuman kemasan maupun kebutuhan bazar UMKM.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Mesin%20Cup%20Sealer%20Kemasan%20Minuman*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 4: Mesin Kemasan -->
+          <article class="product-card" data-category="kemasan">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-expired-printer.jpg"
+                alt="Mesin Coding Cetak Tanggal Kedaluwarsa Kemasan"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Mesin Kemasan</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Mesin Coding Cetak Expired Date</h3>
+                <p class="product-card__desc">
+                  Mesin pencetak kode produksi (*batch*) dan tanggal kedaluwarsa otomatis agar kemasan produk memenuhi standar ritel modern.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Mesin%20Coding%20Cetak%20Expired%20Date*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 5: Mesin Kemasan -->
+          <article class="product-card" data-category="kemasan">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-hand-sealer.jpg"
+                alt="Mesin Impulse Hand Sealer penyegel plastik"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Mesin Kemasan</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Impulse Hand Sealer Kemasan</h3>
+                <p class="product-card__desc">
+                  Alat penyegel kemasan plastik PE/PP portabel dengan pengatur suhu pemanas yang praktis untuk pengemasan harian UMKM.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Impulse%20Hand%20Sealer%20Kemasan*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 6: Alat Produksi -->
+          <article class="product-card" data-category="produksi">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-food-dehydrator.jpg"
+                alt="Mesin Food Dehydrator Pengering Makanan"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Alat Produksi</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Food Dehydrator (Oven Pengering)</h3>
+                <p class="product-card__desc">
+                  Mesin pengering makanan bersuhu terkontrol untuk mengolah keripik buah, rempah kering, teh herbal, dan produk pangan lokal.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Food%20Dehydrator%20(Oven%20Pengering)*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 7: Alat Produksi -->
+          <article class="product-card" data-category="produksi">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-spinner-minyak.jpg"
+                alt="Mesin Spinner Peniris Minyak Gorengan dan Keripik"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Alat Produksi</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Mesin Spinner Peniris Minyak</h3>
+                <p class="product-card__desc">
+                  Peniris minyak sentrifugal berbahan <em>stainless steel</em> agar produk keripik, bawang goreng, dan abon bebas minyak berlebih.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Mesin%20Spinner%20Peniris%20Minyak*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 8: Alat Produksi -->
+          <article class="product-card" data-category="produksi">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-deep-fryer.jpg"
+                alt="Mesin Deep Fryer Gas Komersial Stainless Steel"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Alat Produksi</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Deep Fryer Gas Stainless Komersial</h3>
+                <p class="product-card__desc">
+                  Unit penggorengan gas berkapasitas besar dengan kontrol suhu merata untuk menghasilkan produk gorengan krispi berkualitas.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Deep%20Fryer%20Gas%20Stainless%20Komersial*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 9: Alat Produksi -->
+          <article class="product-card" data-category="produksi">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-meja-stainless.jpg"
+                alt="Meja Kerja & Sink Dapur Produksi Stainless Steel WUBI Kitchen"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Alat Produksi</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Stasiun Kerja &amp; Dapur WUBI Kitchen</h3>
+                <p class="product-card__desc">
+                  Fasilitas meja persiapan dan <em>sink stainless steel food-grade</em> higienis untuk produksi bersama pelaku UMKM kuliner.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Stasiun%20Kerja%20%26%20Dapur%20WUBI%20Kitchen*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 10: Pendingin & Display -->
+          <article class="product-card" data-category="pendingin">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-showcase-cooler.jpg"
+                alt="Showcase Cooler Lemari Pendingin Display Minuman"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Pendingin &amp; Display</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Showcase Cooler Display Pameran</h3>
+                <p class="product-card__desc">
+                  Lemari pendingin kaca vertikal multi-rak untuk memajang minuman dan produk olahan dingin pada pameran maupun galeri.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Showcase%20Cooler%20Display%20Pameran*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 11: Pendingin & Display -->
+          <article class="product-card" data-category="pendingin">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-chest-freezer.jpg"
+                alt="Chest Freezer Pembeku Produk Frozen Food"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Pendingin &amp; Display</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Chest Freezer Penyimpanan Beku</h3>
+                <p class="product-card__desc">
+                  Unit pembeku berkapasitas besar untuk menjaga kesegaran bahan baku daging, hasil laut, dan stok produk <em>frozen food</em>.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Chest%20Freezer%20Penyimpanan%20Beku*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Alat 12: Pendingin & Display -->
+          <article class="product-card" data-category="pendingin">
+            <div class="product-card__media">
+              <img
+                src="assets/images/sewa-juice-dispenser.jpg"
+                alt="Twin Bowl Juice Dispenser Pendingin Minuman"
+                class="product-card__img"
+                width="600"
+                height="600"
+                loading="lazy"
+              >
+              <span class="product-card__badge">Pendingin &amp; Display</span>
+            </div>
+            <div class="product-card__body">
+              <div>
+                <h3 class="product-card__title">Twin Bowl Dispenser Minuman Dingin</h3>
+                <p class="product-card__desc">
+                  Dispenser pendingin dua tabung dengan pengaduk otomatis untuk penyajian minuman segar UMKM saat bazar dan eksibisi.
+                </p>
+              </div>
+              <a
+                href="https://wa.me/6285314377449?text=Halo%20WIRUBI,%20saya%20ingin%20menyewa%20*Twin%20Bowl%20Dispenser%20Minuman%20Dingin*."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn--gold product-card__cta"
+              >
+                <span>Sewa via WhatsApp</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       KONTAK & FOOTER (#kontak)
+       ==================================================================== -->
+  <footer id="kontak" class="section contact-footer" aria-labelledby="kontak-heading">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Sebelah Kiri: Form Pesan Singkat / Hubungi Kami -->
+        <div class="contact-form-card">
+          <h2 class="contact-form-card__title">Reservasi &amp; Konsultasi Sewa Alat</h2>
+          <p class="contact-form-card__subtitle">
+            Isi formulir di bawah ini untuk mengecek ketersediaan jadwal sewa peralatan produksi, mesin kemasan, atau perlengkapan bazar UMKM.
+          </p>
+
+          <form id="contact-form" action="#kontak" method="POST" novalidate>
+            <div class="form-row form-row--2col">
+              <div class="form-field">
+                <label for="nama" class="form-label">Nama Lengkap <span aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  class="form-control"
+                  autocomplete="name"
+                  placeholder="Contoh: Teuku Rizal"
+                  required
+                >
+                <span class="field-error">Mohon isi nama lengkap Anda.</span>
+              </div>
+
+              <div class="form-field">
+                <label for="email" class="form-label">Alamat Email <span aria-hidden="true">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  autocomplete="email"
+                  inputmode="email"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  placeholder="nama@email.com"
+                  required
+                >
+                <span class="field-error">Mohon masukkan alamat email yang valid.</span>
+              </div>
+            </div>
+
+            <div class="form-row form-row--2col">
+              <div class="form-field">
+                <label for="telepon" class="form-label">Nomor WhatsApp / Telepon</label>
+                <input
+                  type="tel"
+                  id="telepon"
+                  name="telepon"
+                  class="form-control"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  placeholder="0853-xxxx-xxxx"
+                >
+              </div>
+
+              <div class="form-field">
+                <label for="topik" class="form-label">Keperluan / Program</label>
+                <select id="topik" name="topik" class="form-control">
+                  <option value="Sewa Barang & Peralatan Produksi UMKM" selected>Sewa Barang &amp; Peralatan Produksi UMKM</option>
+                  <option value="Pemesanan Produk Katalog UMKM">Pemesanan Produk Katalog UMKM</option>
+                  <option value="Pendaftaran UMKM Binaan & Mentoring">Pendaftaran UMKM Binaan &amp; Mentoring</option>
+                  <option value="Kerja Sama Kemitraan / Sponsor">Kerja Sama Kemitraan / Sponsor</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="pesan" class="form-label">Pesan Singkat <span aria-hidden="true">*</span></label>
+                <span id="pesan-hint" class="form-hint">Sebutkan nama alat dan tanggal/durasi penyewaan yang direncanakan.</span>
+                <textarea
+                  id="pesan"
+                  name="pesan"
+                  class="form-control"
+                  aria-describedby="pesan-hint"
+                  placeholder="Halo Tim WIRUBI, saya ingin menyewa peralatan produksi UMKM..."
+                  required
+                ></textarea>
+                <span class="field-error">Mohon tuliskan pesan singkat Anda.</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--gold" style="inline-size: 100%;">
+              <span>Kirim Permintaan Sewa ke WhatsApp</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+
+            <div id="form-status" class="form-status form-status--success" role="status" aria-live="polite" hidden></div>
+          </form>
+        </div>
+
+        <!-- Sebelah Kanan: Informasi Kontak Resmi -->
+        <div class="contact-info">
+          <span class="contact-info__eyebrow">Hubungi Kami</span>
+          <h2 id="kontak-heading" class="contact-info__title">Pusat Layanan Rumah Kemasan &amp; WUBI Kitchen</h2>
+          <p class="contact-info__desc">
+            Kunjungi sekretariat dan fasilitas produksi kami di Banda Aceh atau hubungi tim WIRUBI melalui saluran komunikasi resmi berikut:
+          </p>
+
+          <div class="contact-list">
+            <!-- Alamat -->
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item__label">Alamat Sekretariat &amp; WUBI Kitchen</span>
+                <p class="contact-item__value">Jalan T.Umar No. 263, Setui, Banda Aceh</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item__label">Email Resmi</span>
+                <p class="contact-item__value">
+                  <a href="mailto:wirubindonesia@gmail.com">wirubindonesia@gmail.com</a>
+                </p>
+                <div class="contact-item__links">
+                  <a href="mailto:wirubindonesia@gmail.com" class="contact-chip contact-chip--outline">
+                    Kirim Email
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp / Telepon -->
+            <div class="contact-item">
+              <div class="contact-item__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="contact-item__label">WhatsApp &amp; Telepon</span>
+                <p class="contact-item__value">+62 853-1437-7449</p>
+                <div class="contact-item__links">
+                  <a
+                    href="https://wa.me/6285314377449"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-chip"
+                  >
+                    Chat WhatsApp
+                  </a>
+                  <a href="tel:+6285314377449" class="contact-chip contact-chip--outline">
+                    Panggil Telepon
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Copyright -->
+      <div class="footer-bottom">
+        <div class="footer-brand-summary">
+          <span><strong>WIRUBI</strong> — Wirausaha Unggul Bersama Indonesia (“Inovasi Lokal, Dampak Nasional”)</span>
+        </div>
+
+        <nav aria-label="Tautan Footer">
+          <ul class="footer-links" role="list">
+            <li><a href="index.html#beranda">Beranda</a></li>
+            <li><a href="index.html#tentang">Tentang Kami</a></li>
+            <li><a href="index.html#program">Program</a></li>
+            <li><a href="katalog-produk.html">Produk UMKM</a></li>
+            <li><a href="sewa-barang.html">Sewa Barang</a></li>
+            <li><a href="index.html#galeri">Galeri</a></li>
+            <li><a href="index.html#partner">Partner</a></li>
+          </ul>
+        </nav>
+
+        <p>Copyright &copy; 2026 WIRUBI. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
