@@ -673,199 +673,98 @@
   </main>
 
   <!-- ====================================================================
-       7. KONTAK & FOOTER (#kontak)
+       7. KONTAK & FOOTER (#kontak) — 4-Column Dark Footer (#030F38)
        ==================================================================== -->
-  <footer id="kontak" class="section contact-footer" aria-labelledby="kontak-heading">
+  <footer id="kontak" class="contact-footer" aria-labelledby="kontak-heading">
     <div class="container">
-      <div class="contact-grid">
-        <!-- Sebelah Kiri: Form Pesan Singkat / Hubungi Kami -->
-        <div class="contact-form-card">
-          <h2 class="contact-form-card__title">Kirim Pesan &amp; Konsultasi Program</h2>
-          <p class="contact-form-card__subtitle">
-            Isi formulir di bawah ini untuk mendaftar program pembinaan, kolaborasi kemitraan, atau pemesanan produk UMKM WIRUBI.
+      <div class="footer-grid">
+        <!-- Kolom 1: Brand -->
+        <div class="footer-col footer-col--brand">
+          <h2 id="kontak-heading" class="footer-brand__title">WIRUBI</h2>
+          <p class="footer-brand__tagline">Inovasi Lokal, Dampak Nasional</p>
+          <p class="footer-brand__desc">
+            Wirausaha Unggul Bersama Indonesia (WIRUBI) adalah wadah kolaborasi dan inkubasi pemberdayaan pelaku UMKM agar tumbuh berdaya saing, inovatif, serta berdampak nyata bagi kemajuan ekonomi nasional.
           </p>
-
-          <form id="contact-form" action="#kontak" method="POST" novalidate>
-            <div class="form-row form-row--2col">
-              <div class="form-field">
-                <label for="nama" class="form-label">Nama Lengkap <span aria-hidden="true">*</span></label>
-                <input
-                  type="text"
-                  id="nama"
-                  name="nama"
-                  class="form-control"
-                  autocomplete="name"
-                  placeholder="Contoh: Cut Meutia Sari"
-                  required
-                >
-                <span class="field-error">Mohon isi nama lengkap Anda.</span>
-              </div>
-
-              <div class="form-field">
-                <label for="email" class="form-label">Alamat Email <span aria-hidden="true">*</span></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  class="form-control"
-                  autocomplete="email"
-                  inputmode="email"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                  placeholder="nama@email.com"
-                  required
-                >
-                <span class="field-error">Mohon masukkan alamat email yang valid.</span>
-              </div>
-            </div>
-
-            <div class="form-row form-row--2col">
-              <div class="form-field">
-                <label for="telepon" class="form-label">Nomor WhatsApp / Telepon</label>
-                <input
-                  type="tel"
-                  id="telepon"
-                  name="telepon"
-                  class="form-control"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  placeholder="0853-xxxx-xxxx"
-                >
-              </div>
-
-              <div class="form-field">
-                <label for="topik" class="form-label">Keperluan / Program</label>
-                <select id="topik" name="topik" class="form-control">
-                  <option value="Pendaftaran UMKM Binaan & Mentoring">Pendaftaran UMKM Binaan &amp; Mentoring</option>
-                  <option value="Workshop Pemasaran, Branding & Kemasan">Workshop Pemasaran, Branding &amp; Kemasan</option>
-                  <option value="Pelatihan Manajemen Keuangan & Permodalan">Pelatihan Manajemen Keuangan &amp; Permodalan</option>
-                  <option value="Pemesanan Produk Katalog UMKM">Pemesanan Produk Katalog UMKM</option>
-                  <option value="Kerja Sama Kemitraan / Sponsor">Kerja Sama Kemitraan / Sponsor</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-field">
-                <label for="pesan" class="form-label">Pesan Singkat <span aria-hidden="true">*</span></label>
-                <span id="pesan-hint" class="form-hint">Ceritakan profil singkat usaha Anda atau informasi yang ingin ditanyakan.</span>
-                <textarea
-                  id="pesan"
-                  name="pesan"
-                  class="form-control"
-                  aria-describedby="pesan-hint"
-                  placeholder="Halo Tim WIRUBI, saya ingin bergabung dalam program pembinaan UMKM..."
-                  required
-                ></textarea>
-                <span class="field-error">Mohon tuliskan pesan singkat Anda.</span>
-              </div>
-            </div>
-
-            <button type="submit" class="btn btn--gold" style="inline-size: 100%;">
-              <span>Kirim Pesan ke WhatsApp Resmi</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="22" y1="2" x2="11" y2="13"/>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          <div class="footer-social">
+            <a
+              href="https://www.instagram.com/wirubi.id?utm_source=ig_web_button_share_sheet&amp;cplk=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social-btn"
+              aria-label="Instagram Resmi WIRUBI (@wirubi.id)"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
               </svg>
-            </button>
-
-            <div id="form-status" class="form-status form-status--success" role="status" aria-live="polite" hidden></div>
-          </form>
+            </a>
+          </div>
         </div>
 
-        <!-- Sebelah Kanan: Informasi Kontak Resmi -->
-        <div class="contact-info">
-          <span class="contact-info__eyebrow">Hubungi Kami</span>
-          <h2 id="kontak-heading" class="contact-info__title">Mari Berkolaborasi Memajukan UMKM Indonesia</h2>
-          <p class="contact-info__desc">
-            Kunjungi sekretariat dan pusat inkubasi kami di Banda Aceh atau hubungi tim WIRUBI melalui saluran komunikasi resmi berikut:
-          </p>
+        <!-- Kolom 2: Navigasi -->
+        <div class="footer-col">
+          <h3 class="footer-col__heading">NAVIGASI</h3>
+          <nav aria-label="Tautan Navigasi Footer">
+            <ul class="footer-nav-list" role="list">
+              <li><a href="#beranda">Beranda</a></li>
+              <li><a href="#tentang">Tentang Kami</a></li>
+              <li><a href="#program">Program</a></li>
+              <li><a href="katalog-produk.html">Katalog</a></li>
+              <li><a href="#galeri">Galeri</a></li>
+              <li><a href="#partner">Partner</a></li>
+            </ul>
+          </nav>
+        </div>
 
-          <div class="contact-list">
-            <!-- Alamat -->
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </div>
-              <div>
-                <span class="contact-item__label">Alamat Sekretariat &amp; Inkubasi</span>
-                <p class="contact-item__value">Jalan T.Umar No. 263, Setui, Banda Aceh</p>
-              </div>
-            </div>
-
-            <!-- Email -->
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Kolom 3: Kontak (Email, WhatsApp, Alamat) -->
+        <div class="footer-col">
+          <h3 class="footer-col__heading">KONTAK</h3>
+          <ul class="footer-contact-list" role="list">
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon footer-contact-icon--gold" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
                 </svg>
-              </div>
-              <div>
-                <span class="contact-item__label">Email Resmi</span>
-                <p class="contact-item__value">
-                  <a href="mailto:wirubindonesia@gmail.com">wirubindonesia@gmail.com</a>
-                </p>
-                <div class="contact-item__links">
-                  <a href="mailto:wirubindonesia@gmail.com" class="contact-chip contact-chip--outline">
-                    Kirim Email
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- WhatsApp / Telepon -->
-            <div class="contact-item">
-              <div class="contact-item__icon" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              </span>
+              <a href="mailto:wirubindonesia@gmail.com" class="footer-contact-link">
+                wirubindonesia@gmail.com
+              </a>
+            </li>
+            <li class="footer-contact-item">
+              <span class="footer-contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
-              </div>
-              <div>
-                <span class="contact-item__label">WhatsApp &amp; Telepon</span>
-                <p class="contact-item__value">+62 853-1437-7449</p>
-                <div class="contact-item__links">
-                  <a
-                    href="https://wa.me/6285314377449"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-chip"
-                  >
-                    Chat WhatsApp
-                  </a>
-                  <a href="tel:+6285314377449" class="contact-chip contact-chip--outline">
-                    Panggil Telepon
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+              </span>
+              <a
+                href="https://wa.me/6285314377449"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-contact-link"
+              >
+                +62 853-1437-7449 <span class="footer-contact-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li class="footer-contact-item footer-contact-item--address">
+              <span class="footer-contact-icon footer-contact-icon--gold" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </span>
+              <span class="footer-contact-text">
+                Jalan T.Umar No. 263, Setui, Kec. Baiturrahman, Kota Banda Aceh, Aceh.
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- Footer Bottom Copyright -->
+      <!-- Garis Pembatas Bawah & Copyright -->
       <div class="footer-bottom">
-        <div class="footer-brand-summary">
-          <span><strong>WIRUBI</strong> — Wirausaha Unggul Bersama Indonesia (“Inovasi Lokal, Dampak Nasional”)</span>
-        </div>
-
-        <nav aria-label="Tautan Footer">
-          <ul class="footer-links" role="list">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#tentang">Tentang Kami</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="katalog-produk.html">Produk UMKM</a></li>
-            <li><a href="sewa-barang.html">Sewa Barang</a></li>
-            <li><a href="#galeri">Galeri</a></li>
-            <li><a href="#partner">Partner</a></li>
-          </ul>
-        </nav>
-
-        <p>Copyright &copy; 2026 WIRUBI. All rights reserved.</p>
+        <p>&copy; 2026 WIRUBI. All rights reserved.</p>
       </div>
     </div>
   </footer>
