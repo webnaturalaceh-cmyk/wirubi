@@ -119,8 +119,10 @@ function initMobileNavigation() {
  */
 function initScrollSpy() {
   const navLinks = document.querySelectorAll('.nav-menu a.nav-link');
-  const catalogToggle = document.querySelector('.nav-dropdown__toggle');
-  const sections = document.querySelectorAll('main section[id], footer[id]');
+  const catalogToggle = document.querySelector('[data-dropdown="katalog"]') || document.querySelector('.nav-dropdown:nth-of-type(2) .nav-dropdown__toggle');
+  const tentangToggle = document.querySelector('[data-dropdown="tentang"]');
+  const dropdownItems = document.querySelectorAll('.nav-dropdown__item');
+  const sections = document.querySelectorAll('main section[id], #visi-misi, footer[id]');
 
   if (!navLinks.length || !sections.length) return;
 
@@ -134,6 +136,10 @@ function initScrollSpy() {
       activeId === 'sewa-barang' ||
       activeId === 'katalog';
 
+    const isTentangSection =
+      activeId === 'tentang' ||
+      activeId === 'visi-misi';
+
     navLinks.forEach((link) => {
       const href = link.getAttribute('href') || '';
       const isMatch = href === `#${activeId}`;
@@ -144,6 +150,26 @@ function initScrollSpy() {
         link.removeAttribute('aria-current');
       }
     });
+
+    dropdownItems.forEach((item) => {
+      const href = item.getAttribute('href') || '';
+      const isMatch = href === `#${activeId}` || href.endsWith(`#${activeId}`);
+      if (isMatch) {
+        item.setAttribute('aria-current', 'page');
+      } else {
+        item.removeAttribute('aria-current');
+      }
+    });
+
+    if (tentangToggle) {
+      const keepTentangActive = isTentangSection && activeId !== 'kontak';
+      tentangToggle.classList.toggle(':target-current', keepTentangActive);
+      if (keepTentangActive) {
+        tentangToggle.setAttribute('aria-current', 'true');
+      } else {
+        tentangToggle.removeAttribute('aria-current');
+      }
+    }
 
     if (catalogToggle) {
       const keepCatalogActive = isCatalogSection && activeId !== 'kontak';
