@@ -931,6 +931,258 @@
     color: var(--color-text-on-navy-muted);
   }
 
+  /* ==========================================================================
+     VISI & MISI SECTION (#visi-misi - 2-Kolom Grid)
+     ========================================================================== */
+  .visi-misi-block {
+    margin-block-end: 3.5rem;
+    scroll-margin-top: calc(var(--header-height) + 1.25rem);
+  }
+
+  .visi-misi-header {
+    text-align: center;
+    max-inline-size: 44rem;
+    margin-inline: auto;
+    margin-block-end: 2rem;
+  }
+
+  .visi-misi-header__title {
+    font-size: clamp(1.4rem, 1.15rem + 1vw, 1.875rem);
+    font-weight: 800;
+    color: var(--color-navy-900);
+    margin-block-end: 0.5rem;
+  }
+
+  .visi-misi-header__desc {
+    color: var(--color-text-muted);
+    font-size: 0.975rem;
+    line-height: 1.6;
+  }
+
+  .visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 860px) {
+    .visi-misi-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* Modern Card Styling (White BG, 16px radius, Top Accent Border) */
+  .vm-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+    overflow: hidden;
+  }
+
+  .vm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Border Aksen Atas (Emas untuk Visi, Biru untuk Misi) */
+  .vm-card--visi {
+    border-block-start: 4px solid #CCA147;
+  }
+
+  .vm-card--visi:hover {
+    border-color: var(--color-border-strong);
+    border-block-start-color: #CCA147;
+  }
+
+  .vm-card--misi {
+    border-block-start: 4px solid #05195B;
+  }
+
+  .vm-card--misi:hover {
+    border-color: var(--color-border-strong);
+    border-block-start-color: #05195B;
+  }
+
+  .vm-card__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-block-end: 1.5rem;
+  }
+
+  .vm-card__icon-box {
+    inline-size: 3.25rem;
+    block-size: 3.25rem;
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .vm-card__icon-box--gold {
+    background: linear-gradient(135deg, var(--color-gold-50) 0%, var(--color-gold-100) 100%);
+    color: #CCA147;
+    border: 1px solid rgba(204, 161, 71, 0.25);
+  }
+
+  .vm-card__icon-box--navy {
+    background: linear-gradient(135deg, var(--color-navy-50) 0%, var(--color-navy-100) 100%);
+    color: #05195B;
+    border: 1px solid rgba(5, 25, 91, 0.15);
+  }
+
+  .vm-card__badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-pill);
+    margin-block-end: 0.35rem;
+  }
+
+  .vm-card__badge--gold {
+    background-color: var(--color-gold-100);
+    color: #946816;
+  }
+
+  .vm-card__badge--navy {
+    background-color: var(--color-navy-50);
+    color: #05195B;
+  }
+
+  .vm-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-navy-900);
+    line-height: 1.3;
+  }
+
+  .vm-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Visi Text Content */
+  .vm-card__visi-quote {
+    position: relative;
+    padding: 1.25rem 1.35rem;
+    background-color: var(--color-canvas);
+    border-inline-start: 3px solid #CCA147;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 0;
+  }
+
+  .vm-card__visi-text {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75;
+    color: var(--color-navy-950);
+  }
+
+  .vm-card__footer {
+    margin-block-start: 1.75rem;
+    padding-block-start: 1.25rem;
+    border-block-start: 1px dashed var(--color-border);
+  }
+
+  .vm-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .vm-card__tags-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-inline-end: 0.25rem;
+  }
+
+  .vm-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-navy-900);
+    background-color: var(--color-surface-muted);
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+  }
+
+  .vm-tag svg {
+    color: #CCA147;
+  }
+
+  /* Misi List with Golden Checkmark Bullets */
+  .vm-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .vm-card__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .vm-card__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 1.625rem;
+    block-size: 1.625rem;
+    border-radius: 50%;
+    background-color: var(--color-gold-100);
+    color: #CCA147;
+    flex-shrink: 0;
+    margin-block-start: 0.15rem;
+    box-shadow: 0 1px 2px rgba(204, 161, 71, 0.25);
+  }
+
+  .vm-card__item-text {
+    font-size: 0.9625rem;
+    line-height: 1.55;
+    color: var(--color-text-body);
+    font-weight: 500;
+  }
+
+  /* Pillars Subheader */
+  .pillars-block {
+    margin-block-start: 1rem;
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+
+  .pillars-header__title {
+    font-size: clamp(1.4rem, 1.15rem + 1vw, 1.875rem);
+    font-weight: 800;
+    color: var(--color-navy-900);
+  }
+
   /* 3 Pillars Grid (Grid 3 Kolom) */
   .pillars-grid {
     display: grid;
@@ -1598,13 +1850,14 @@
   }
 
   /* ------------------------------------------------------------------------
-     SECTION 7: KONTAK & FOOTER (#kontak) — 4-Column Dark Footer (#030F38)
+     SECTION 7: KONTAK & FOOTER (#kontak) — 2-Column Minimalist (Navy & Gold)
      ------------------------------------------------------------------------ */
   .contact-footer {
-    background-color: #030F38;
-    color: var(--color-text-on-navy);
-    padding-block: clamp(3.75rem, 6vw, 5rem) 2rem;
-    border-block-start: 1px solid rgb(255 255 255 / 0.08);
+    background-color: var(--color-navy-900);
+    background-image: linear-gradient(90deg, var(--color-navy-950) 0%, var(--color-navy-900) 55%, var(--color-navy-700) 100%);
+    color: var(--color-white);
+    padding-block: clamp(3rem, 5vw, 4.25rem) 1.75rem;
+    border-block-start: 4px solid var(--color-gold-500);
     position: relative;
   }
 
@@ -1705,7 +1958,7 @@
     border: 1px solid var(--color-success);
   }
 
-  /* 3-Column Footer Grid */
+  /* 2-Column Minimalist Footer Grid */
   .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -1713,179 +1966,87 @@
     align-items: start;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .footer-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-  }
-
-  @media (min-width: 900px) {
-    .footer-grid {
-      grid-template-columns: 1.4fr 0.75fr 1.35fr;
-      gap: clamp(2.5rem, 4.5vw, 4rem);
+      gap: 2rem;
+      justify-content: space-between;
     }
   }
 
   .footer-col {
     display: flex;
     flex-direction: column;
+    color: #FFFFFF;
+  }
+
+  .footer-col--left {
     align-items: flex-start;
+    text-align: left;
   }
 
-  /* Kolom 1: Brand */
-  .footer-brand__title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--color-white);
-    letter-spacing: 0.02em;
-    line-height: 1.15;
+  .footer-col--right {
+    align-items: flex-start;
+    text-align: left;
   }
 
-  .footer-brand__tagline {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    color: var(--color-gold-500);
-    margin-block-start: 0.35rem;
-  }
-
-  .footer-brand__desc {
-    font-size: 0.9rem;
-    color: var(--color-text-on-navy-muted);
-    line-height: 1.65;
-    margin-block-start: 0.875rem;
-    max-inline-size: 36ch;
-  }
-
-  .footer-social {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-block-start: 1.25rem;
-  }
-
-  .footer-social-btn {
-    inline-size: 2.625rem;
-    block-size: 2.625rem;
-    border-radius: var(--radius-pill);
-    background-color: rgb(255 255 255 / 0.06);
-    border: 1px solid rgb(255 255 255 / 0.16);
-    color: var(--color-white);
-    display: grid;
-    place-items: center;
-    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-  }
-
-  .footer-social-btn:hover {
-    background-color: var(--color-gold-500);
-    border-color: var(--color-gold-500);
-    color: #030F38;
-    transform: translateY(-2px);
+  @media (min-width: 768px) {
+    .footer-col--right {
+      align-items: flex-end;
+      text-align: right;
+    }
   }
 
   /* Column Headings */
   .footer-col__heading {
-    font-size: 0.8125rem;
+    font-size: 1.0625rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: var(--color-gold-500);
+    margin-block-end: 0.875rem;
+  }
+
+  /* Minimalist Plain List (No Card / Box) */
+  .footer-plain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     color: var(--color-white);
-    margin-block-end: 1.25rem;
   }
 
-  /* Kolom 2: Navigasi */
-  .footer-nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  .footer-plain-list li {
+    font-size: 0.96875rem;
+    line-height: 1.55;
+    color: var(--color-white);
   }
 
-  .footer-nav-list a {
-    font-size: 0.9375rem;
-    color: var(--color-text-on-navy-muted);
-    transition: color var(--transition-fast), transform var(--transition-fast);
-    display: inline-block;
-  }
-
-  .footer-nav-list a:hover {
-    color: var(--color-gold-500);
-    transform: translateX(3px);
-  }
-
-  /* Kolom 3: Kontak */
-  .footer-contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .footer-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.875rem;
-  }
-
-  .footer-contact-icon {
-    inline-size: 2.5rem;
-    block-size: 2.5rem;
-    border-radius: 0.625rem;
-    background-color: rgb(255 255 255 / 0.05);
-    border: 1px solid rgb(255 255 255 / 0.15);
-    color: var(--color-text-on-navy);
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-  }
-
-  .footer-contact-icon--gold {
-    border: 1.5px solid var(--color-gold-500);
-    background-color: rgb(204 161 71 / 0.1);
-    color: var(--color-gold-500);
-  }
-
-  .footer-contact-link {
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--color-text-on-navy);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    word-break: break-word;
+  .footer-plain-list a {
+    color: var(--color-white);
+    text-decoration: none;
     transition: color var(--transition-fast);
   }
 
-  .footer-contact-link:hover {
+  .footer-plain-list a:hover {
     color: var(--color-gold-500);
-  }
-
-  .footer-contact-arrow {
-    font-size: 0.85rem;
-    color: var(--color-gold-500);
-  }
-
-  .footer-contact-item--address {
-    align-items: flex-start;
-  }
-
-  .footer-contact-text {
-    font-size: 0.925rem;
-    color: var(--color-text-on-navy-muted);
-    line-height: 1.55;
-    padding-block-start: 0.15rem;
   }
 
   /* Garis Pembatas Bawah & Copyright */
   .footer-bottom {
-    margin-block-start: clamp(2.75rem, 5vw, 3.75rem);
-    padding-block-start: 1.5rem;
-    border-block-start: 1px solid rgb(255 255 255 / 0.1);
+    margin-block-start: clamp(2.25rem, 4vw, 3rem);
+    padding-block-start: 1.25rem;
+    border-block-start: 1px solid rgb(255 255 255 / 0.14);
     text-align: center;
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: var(--color-text-on-navy-muted);
   }
 
   .footer-bottom p {
     margin-inline: auto;
+    color: var(--color-text-on-navy-muted);
   }
 
   @media (forced-colors: active) {
@@ -1893,7 +2054,8 @@
     .filter-btn,
     .program-card,
     .product-card,
-    .pillar-card {
+    .pillar-card,
+    .vm-card {
       border: 1px solid CanvasText;
     }
   }
