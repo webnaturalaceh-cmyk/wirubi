@@ -67,7 +67,28 @@
           <nav aria-label="Navigasi Utama">
             <ul class="nav-menu" role="list">
               <li><a href="index.html#beranda" class="nav-link">Beranda</a></li>
-              <li><a href="index.html#tentang" class="nav-link">Tentang Kami</a></li>
+              <li class="nav-dropdown">
+                <button
+                  type="button"
+                  class="nav-link nav-dropdown__toggle"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  data-dropdown="tentang"
+                >
+                  <span>Tentang Kami</span>
+                  <svg class="nav-dropdown__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <ul class="nav-dropdown__menu" role="list" aria-label="Sub-menu Tentang Kami">
+                  <li>
+                    <a href="index.html#tentang" class="nav-dropdown__item">Profil WIRUBI</a>
+                  </li>
+                  <li>
+                    <a href="index.html#visi-misi" class="nav-dropdown__item">Visi &amp; Misi</a>
+                  </li>
+                </ul>
+              </li>
               <li><a href="index.html#program" class="nav-link">Program</a></li>
               <li class="nav-dropdown">
                 <button
@@ -77,6 +98,7 @@
                   aria-haspopup="true"
                   aria-current="true"
                   data-active-page="true"
+                  data-dropdown="katalog"
                 >
                   <span>Katalog</span>
                   <svg class="nav-dropdown__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -700,92 +722,37 @@
   </main>
 
   <!-- ====================================================================
-       KONTAK & FOOTER (#kontak) — 4-Column Dark Footer (#030F38)
+       KONTAK & FOOTER (#kontak) — 2-Column Minimalist Blue Gradient Footer
        ==================================================================== -->
   <footer id="kontak" class="contact-footer" aria-labelledby="kontak-heading">
     <div class="container">
       <div class="footer-grid">
-        <!-- Kolom 1: Brand -->
-        <div class="footer-col footer-col--brand">
-          <h2 id="kontak-heading" class="footer-brand__title">WIRUBI</h2>
-          <p class="footer-brand__tagline">Inovasi Lokal, Dampak Nasional</p>
-          <p class="footer-brand__desc">
-            Wirausaha Unggul Bersama Indonesia (WIRUBI) adalah wadah kolaborasi dan inkubasi pemberdayaan pelaku UMKM agar tumbuh berdaya saing, inovatif, serta berdampak nyata bagi kemajuan ekonomi nasional.
-          </p>
-          <div class="footer-social">
-            <a
-              href="https://www.instagram.com/wirubi.id?utm_source=ig_web_button_share_sheet&amp;cplk=ZDNlZDc0MzIxNw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              class="footer-social-btn"
-              aria-label="Instagram Resmi WIRUBI (@wirubi.id)"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-            </a>
-          </div>
+        <!-- Kolom Kiri: HUBUNGI KAMI (Rata Kiri) -->
+        <div class="footer-col footer-col--left">
+          <h2 id="kontak-heading" class="footer-col__heading">HUBUNGI KAMI</h2>
+          <ul class="footer-plain-list" role="list">
+            <li>Jalan T.Umar No. 263, Setui</li>
+            <li>Banda Aceh, Aceh</li>
+            <li>Email: <a href="mailto:wirubindonesia@gmail.com">wirubindonesia@gmail.com</a></li>
+            <li>Whatsapp: <a href="https://wa.me/6285314377449" target="_blank" rel="noopener noreferrer">+62 853-1437-7449</a></li>
+            <li>Instagram: <a href="https://www.instagram.com/wirubi.id?utm_source=ig_web_button_share_sheet&amp;cplk=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">@wirubi.id</a></li>
+          </ul>
         </div>
 
-        <!-- Kolom 2: Navigasi -->
-        <div class="footer-col">
-          <h3 class="footer-col__heading">NAVIGASI</h3>
-          <nav aria-label="Tautan Navigasi Footer">
-            <ul class="footer-nav-list" role="list">
-              <li><a href="index.html#beranda">Beranda</a></li>
+        <!-- Kolom Kanan: TAUTAN CEPAT (Rata Kanan) -->
+        <div class="footer-col footer-col--right">
+          <h2 class="footer-col__heading">TAUTAN CEPAT</h2>
+          <nav aria-label="Tautan Cepat Footer">
+            <ul class="footer-plain-list" role="list">
               <li><a href="index.html#tentang">Tentang Kami</a></li>
-              <li><a href="index.html#program">Program</a></li>
-              <li><a href="katalog-produk.html">Katalog</a></li>
+              <li><a href="index.html#visi-misi">Visi &amp; Misi</a></li>
+              <li><a href="index.html#program">Program &amp; Layanan</a></li>
+              <li><a href="katalog-produk.html">Katalog Produk UMKM</a></li>
+              <li><a href="sewa-barang.html">Sewa Barang</a></li>
               <li><a href="index.html#galeri">Galeri</a></li>
-              <li><a href="index.html#partner">Partner</a></li>
+              <li><a href="index.html#partner">Mitra</a></li>
             </ul>
           </nav>
-        </div>
-
-        <!-- Kolom 3: Kontak (Email, WhatsApp, Alamat) -->
-        <div class="footer-col">
-          <h3 class="footer-col__heading">KONTAK</h3>
-          <ul class="footer-contact-list" role="list">
-            <li class="footer-contact-item">
-              <span class="footer-contact-icon footer-contact-icon--gold" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </span>
-              <a href="mailto:wirubindonesia@gmail.com" class="footer-contact-link">
-                wirubindonesia@gmail.com
-              </a>
-            </li>
-            <li class="footer-contact-item">
-              <span class="footer-contact-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </span>
-              <a
-                href="https://wa.me/6285314377449"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer-contact-link"
-              >
-                +62 853-1437-7449 <span class="footer-contact-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li class="footer-contact-item footer-contact-item--address">
-              <span class="footer-contact-icon footer-contact-icon--gold" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-              </span>
-              <span class="footer-contact-text">
-                Jalan T.Umar No. 263, Setui, Kec. Baiturrahman, Kota Banda Aceh, Aceh.
-              </span>
-            </li>
-          </ul>
         </div>
       </div>
 
